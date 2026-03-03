@@ -1,0 +1,228 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f5f00a;
+      overflow-x: hidden;
+    }
+
+    header {
+      /* background:green; */
+      background-image: url(/assest/burlap-sack-of-flour-with-wheat.webp);
+      background-position: 10% 50%;
+        background-size: cover;
+        
+      color: rgb(230, 182, 8);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+    
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+        /* background-color: #333; */
+
+    }
+    
+    section p{
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+        opacity: 0.8;
+    }
+    .products-section {
+        padding: 40px 20px;
+      text-align: center;
+        background-color: #333;
+        width: 100%;
+
+    }
+    .products-section h2 {
+        color: #c49a2c;
+    }
+
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      
+        padding: 20px;
+      
+    }
+    .card:hover{
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .card img{
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+
+    }
+     .card h3 {
+      margin: 15px 0 10px;
+      font-size: 18px;
+    }
+
+     .card p {
+      margin: 0;
+      color: #555;
+    }
+.contact {
+    padding: 50px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe5d;
+}
+    button {
+      background: #c49a2c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .icon i {
+      font-size: 24px;
+      margin-left: 15px;
+      color: white;
+      transition: color 0.3s ease;
+    }
+    .icon i:hover {
+      color: #c49a2c;
+      
+    }
+
+    footer {
+      background: #333;
+      color:  #c49a2c;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+
+@media (max-width: 768px) {
+  body{
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 40px 15px;
+    background-position: center;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  .products {
+    display: flex;
+    width: 90%;
+    margin-left: -30px;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .icon i {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  @media (max-width: 768px) {
+
+  .contact {
+    padding: 30px 15px;
+  }
+
+  .contact h2 {
+    font-size: 24px;
+  }
+
+  .contact-text {
+    font-size: 16px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+
+  .whatsapp-btn {
+    width: 90%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+}
+
+
+
+}
