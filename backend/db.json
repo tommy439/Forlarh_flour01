@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Forlah lamin",
+      "phone": "07059143461",
+      "email": "alamintomori01@gmail.com",
+      "password": "090tomori"
+    }
+  ],
+  "products": [
+    {
+      "name": "wheat flour",
+      "description": "tasty and yummy",
+      "price": 1200,
+      "category": "rice",
+      "quantity": 1,
+      "detail": "easy fummy and soft",
+      "image": "https://prkhwwfrfuemgmrvqfqf.supabase.co/storage/v1/object/public/products/1782391201058-image1.jpeg",
+      "id": "SvWEiaF1niY"
+    },
+    {
+      "name": "wheat flour",
+      "description": "tasty and yummy",
+      "price": 1200,
+      "category": "rice",
+      "quantity": 23,
+      "detail": "easy fummy and soft",
+      "image": "https://prkhwwfrfuemgmrvqfqf.supabase.co/storage/v1/object/public/products/1782391157615-burlap-sack-of-flour-with-wheat.webp",
+      "id": "NRCeNQNlD-o"
+    },
+    {
+      "name": "wheat flour",
+      "description": "rice",
+      "price": 2200,
+      "category": "flour",
+      "quantity": 2,
+      "detail": "fummy and soft",
+      "image": "https://prkhwwfrfuemgmrvqfqf.supabase.co/storage/v1/object/public/products/1782729606985-image1.jpeg",
+      "id": "Z9MHpdEUJpg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

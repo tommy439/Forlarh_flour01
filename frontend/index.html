@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <title>Forlah_ventures</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      overflow-x: hidden;
+    }
+
+    .main-header {
+      width: 100%;
+      height: 13vh;
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+
+    }
+
+    .main-header ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+      cursor: pointer;
+
+    }
+
+    .main-header ul a {
+      cursor: pointer;
+      text-decoration: none;
+      color: #f8f8f8;
+      transition: color 0.6s ease;
+      font-size: 15px;
+      font-weight: bold;
+      background-color: green;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+
+    }
+
+    .main-header ul a:hover {
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: rgb(216, 5, 5);
+      transform: scale(1.05);
+    }
+
+    .order {
+      background-color: green;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+    }
+
+    .order:hover {
+      background-color: red;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .order1 {
+      background-color: rgb(1, 48, 1);
+
+      padding: 10px 20px;
+      border-radius: 5px;
+      /* color: red; */
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      width: 200px;
+      font-size: 15px;
+      margin: auto;
+
+    }
+
+    .order1:hover {
+      background-color: green;
+      transform: scale(1.05);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .user-icon i {
+      font-size: 24px;
+      margin-left: 15px;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .user-icon i:hover {
+      color: red;
+
+    }
+
+    .welcome-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100vh;
+
+      background: rgba(0, 0, 0, 0.7);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 999;
+    }
+
+    .welcome-box {
+      background: white;
+
+      width: 90%;
+      max-width: 500px;
+
+      padding: 35px;
+
+      border-radius: 20px;
+
+      text-align: center;
+
+      position: relative;
+
+      animation: popup 0.8s ease;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 18px;
+
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    .welcome-box h1 {
+      margin-bottom: 15px;
+      font-size: 36px;
+    }
+
+    .welcome-box p {
+      color: #555;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    /* SMALLER BUTTON */
+    .explore-btn {
+      padding: 10px 18px;
+
+      border: none;
+      border-radius: 8px;
+
+      background: orange;
+      color: white;
+
+      cursor: pointer;
+
+      font-size: 15px;
+
+      transition: 0.3s;
+    }
+
+    .explore-btn:hover {
+      transform: scale(1.05);
+      background: darkorange;
+    }
+
+    @keyframes popup {
+      from {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* HERO SECTION */
+    header {
+      position: relative;
+
+      width: 100%;
+      height: 100vh;
+
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    /* VIDEO */
+    .bg-video {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      z-index: -2;
+    }
+
+    /* DARK OVERLAY */
+    .overlay {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      z-index: -1;
+    }
+
+    /* CONTENT */
+    .hero-content {
+      color: white;
+
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 20px;
+
+      animation: fadeUp 1.5s ease;
+    }
+
+    /* TITLE */
+    header h1 {
+      font-size: 70px;
+
+      color: #22c55e;
+
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* TEXT */
+    header p {
+      font-size: 24px;
+
+      color: white;
+    }
+
+    .about {
+      padding: 40px 20px;
+      text-align: center;
+      margin: auto;
+      background-color: green;
+      color: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.2;
+      opacity: 0.8;
+    }
+
+    .products-section {
+      padding: 60px 40px;
+      background: #222;
+    }
+
+    .products-section h2 {
+      text-align: center;
+      color: white;
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+      transition: .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: green;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .short-details {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .details-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: green;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .details-btn:hover {
+      background: red;
+    }
+
+    .contact {
+      padding: 50px;
+      background-color: green;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      color: white;
+    }
+
+    .whatsapp-btn {
+      width: 270px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      padding: 15px 30px;
+      background-color: #1e7c3a;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #22c55e;
+    }
+
+    button {
+      background: #c49a2c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .icon i {
+      color: green;
+      font-size: 24px;
+      margin-left: 15px;
+
+    }
+
+    .icon i:hover {
+      color: red;
+    }
+
+
+    footer {
+      background: black;
+      color: #f8f8f8;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sidebar{
+    display:none;
+}
+   /* DESKTOP (1025px and above) */
+    @media (min-width:1025px) {
+
+      .menu-btn {
+        display: none;
+      }
+
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+      }
+
+      .main-header ul {
+        display: flex;
+        gap: 20px;
+      }
+
+      .order {
+        display: block;
+      }
+
+      .user-icon {
+        display: block;
+      }
+    }
+   /* TABLET (769px - 1024px) */
+
+    @media (min-width:769px) and (max-width:1024px) {
+
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px;
+      }
+
+      .main-header ul {
+        display: flex;
+        gap: 12px;
+      }
+
+      .main-header ul a {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .order {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+
+      header h1 {
+        font-size: 50px;
+      }
+
+      header p {
+        font-size: 20px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+       .menu-btn{
+        display:block;
+    }
+
+    .main-header ul,
+    .order{
+        display:none;
+    }
+
+    .sidebar{
+        display:flex;
+        flex-direction:column;
+
+        position:fixed;
+        top:0;
+        left:-260px;
+
+        width:250px;
+        height:100vh;
+
+        background:#111;
+        padding-top:70px;
+
+        transition:.3s;
+        z-index:999;
+    }
+
+    .sidebar.active{
+        left:0;
+    }
+
+    .sidebar a{
+        color:#fff;
+        text-decoration:none;
+        padding:15px 20px;
+    }
+}
+    @media (max-width:768px) {
+
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      .main-header ul {
+        display: none;
+      }
+
+      .order {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      header {
+        height: 80vh;
+      }
+
+      header h1 {
+        font-size: 35px;
+      }
+
+      header p {
+        font-size: 18px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .about,
+      .products-section,
+      .contact {
+        padding: 30px 15px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+       .menu-btn{
+        display:block;
+    }
+
+    .main-header ul,
+    .order{
+        display:none;
+    }
+
+    .sidebar{
+        display:flex;
+        flex-direction:column;
+
+        position:fixed;
+        top:0;
+        left:-260px;
+
+        width:250px;
+        height:100vh;
+
+        background:#111;
+        padding-top:70px;
+
+        transition:.3s;
+        z-index:999;
+    }
+
+    .sidebar.active{
+        left:0;
+    }
+
+    .sidebar a{
+        color:#fff;
+        text-decoration:none;
+        padding:15px 20px;
+    }
+}
+
+    @media (max-width:480px) {
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .logo span {
+        font-size: 18px;
+      }
+
+      .menu-btn {
+        font-size: 24px;
+      }
+
+      .user-icon i {
+        font-size: 22px;
+      }
+
+      .card img {
+        height: 180px;
+      }
+
+      .whatsapp-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <div class="main-header">
+      <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div>
+        <i style="color:  green; font-size: 17px;" class="fa-solid fa-store"></i>
+        <span style="font-size: 20px; font-weight: 900; font-family: 'Dancing Script', cursive;">Forlah Venture</span>
+      </div>
+      <ul>
+        <a href="#home">
+          <li>Home</li>
+        </a>
+        <a href="#about">
+          <li>About</li>
+        </a>
+        <a href="#products">
+          <li>Products</li>
+        </a>
+        <a href="#contact">
+          <li>Contact</li>
+        </a>
+      </ul>
+      <div class="order" onclick="orderNow()">
+        Order now
+
+      </div>
+      <div class="user-icon">
+        <a href="login.html"><i class="bi bi-person-badge"></i></a>
+      </div>
+
+       <div id="sidebar" class="sidebar">
+
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#products" onclick="toggleMenu()">Products</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+
+    </div>
+
+
+    </div>
+    <!-- WELCOME POPUP -->
+    <div class="welcome-popup" id="welcomePopup">
+
+      <div class="welcome-box">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h1>Welcome To Forlah Venture</h1>
+        <p>
+          Your trusted and reliable source for high-quality flour products.
+          We are committed to providing healthy, fresh, and easy-to-prepare flour for every home.
+        </p>
+
+        <button onclick="closePopup()">Explore Products</button>
+
+      </div>
+
+    </div>
+
+
+    <header id="home">
+
+      <!-- BACKGROUND VIDEO -->
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="/assest/flour.mp4" type="video/mp4">
+      </video>
+
+      <!-- DARK OVERLAY -->
+      <div class="overlay"></div>
+
+      <!-- HERO CONTENT -->
+      <div class="hero-content">
+
+        <h1>Forlah Ventures Flour</h1>
+
+        <p>Healthy Flour Products</p>
+
+        <button class="order1" onclick="orderNow()">
+          Order on WhatsApp
+        </button>
+
+      </div>
+
+    </header>
+
+    <section class="about" id="about">
+      <h2>About Us</h2>
+      <p>Our journey started with a simple goal — to provide high-quality flour that families can trust. We noticed the
+        need for clean, affordable,
+        and reliable food ingredients, and we decided to build a brand that delivers freshness and quality every time,
+        <br>
+        Our products are hygienically processed, neatly packaged, and made to give you freshness, quality, and great
+        taste in every meal.
+        We produce high-quality wheat-based food products made with care and hygiene.
+      </p>
+    </section>
+    <section class="products-section" id="products">
+      <h2>Our Products</h2>
+
+      <div class="products" id="productsContainer"></div>
+    </section>
+
+
+
+
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+
+      <p class="contact-text">
+        Have questions or want to place an order? We are always ready to serve you.
+      </p>
+
+      <div class="contact-info">
+        <p><strong>📞 Phone:</strong> +234 805 706 9302</p>
+        <p><strong>📍 Location:</strong> ilorin, Nigeria</p>
+        <p><strong>🕒 Business Hours:</strong> Mon - Sat (8AM - 6PM)</p>
+      </div>
+
+      <a href="https://wa.me/+2348057069302?text=Hello%20Forlah_ventures%2C%20I%20would%20like%20to%20place%20an%20order"
+        target="_blank" class="whatsapp-btn">
+        💬 Chat with us on WhatsApp
+      </a>
+    </section>
+    <hr style="padding: 3px; background-color: white;border: none; ">
+
+    <footer>
+      <p>© 2026 Forlah Ventures. All rights reserved.</p>
+      <div class="icon">
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-facebook"></i>
+        <a href="https://wa.me/+2348057069302?text=Hello%20Forlah_ventures%2C%20I%20would%20like%20to%20place%20an%20order"
+          target="_blank"><i class="bi bi-whatsapp"></i></a>
+
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+      function orderNow() {
+        window.location.href = "https://wa.me/+2348057069302?text=Hello%20Forlah_ventures%2C%20I%20would%20like%20to%20place%20an%20order.";
+
+      }
+
+      function closePopup() {
+        document.getElementById('welcomePopup').style.display = 'none';
+      }
+
+
+
+      function showDetails(title, text) {
+
+        document.getElementById("popupTitle").innerText = title;
+
+        document.getElementById("popupText").innerText = text;
+
+        document.getElementById("detailsPopup").style.display = "flex";
+      }
+
+      function closeDetails() {
+
+        document.getElementById("detailsPopup").style.display = "none";
+      }
+
+      function formatPrice(value) {
+        return new Intl.NumberFormat("en-NG", {
+          style: "currency",
+          currency: "NGN",
+          maximumFractionDigits: 0
+        }).format(Number(value || 0));
+      }
+
+      async function loadProducts() {
+        try {
+          const response = await fetch("http://localhost:3001/products");
+          const products = await response.json();
+
+          const container =
+            document.getElementById("productsContainer");
+
+          container.innerHTML = "";
+
+          products.forEach(product => {
+
+            const card = document.createElement("div");
+
+            card.classList.add("card");
+
+            card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+
+        <div class="card-content">
+
+          <h3>${product.name}</h3>
+
+          <p class="price">
+            ${formatPrice(product.price)}
+          </p>
+
+          <p class="short-details">
+            ${product.details ?
+                product.details.substring(0, 80) + "..."
+                : "No description available"}
+          </p>
+
+          <button class="details-btn">
+            View Details
+          </button>
+
+        </div>
+      `;
+
+            card.querySelector(".details-btn")
+              .addEventListener("click", () => {
+                showDetails(
+                  product.name,
+                  product.details
+                );
+              });
+
+            container.appendChild(card);
+          });
+
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      loadProducts();
+    </script>
+
+</body>
+
+</html>
