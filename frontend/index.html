@@ -445,10 +445,11 @@
       align-items: center;
     }
 
-    .sidebar{
-    display:none;
-}
-   /* DESKTOP (1025px and above) */
+    .sidebar {
+      display: none;
+    }
+
+    /* DESKTOP (1025px and above) */
     @media (min-width:1025px) {
 
       .menu-btn {
@@ -475,7 +476,8 @@
         display: block;
       }
     }
-   /* TABLET (769px - 1024px) */
+
+    /* TABLET (769px - 1024px) */
 
     @media (min-width:769px) and (max-width:1024px) {
 
@@ -518,43 +520,45 @@
         justify-content: center;
         gap: 15px;
       }
-       .menu-btn{
-        display:block;
+
+      .menu-btn {
+        display: block;
+      }
+
+      .main-header ul,
+      .order {
+        display: none;
+      }
+
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        left: -260px;
+
+        width: 250px;
+        height: 100vh;
+
+        background: #111;
+        padding-top: 70px;
+
+        transition: .3s;
+        z-index: 999;
+      }
+
+      .sidebar.active {
+        left: 0;
+      }
+
+      .sidebar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 20px;
+      }
     }
 
-    .main-header ul,
-    .order{
-        display:none;
-    }
-
-    .sidebar{
-        display:flex;
-        flex-direction:column;
-
-        position:fixed;
-        top:0;
-        left:-260px;
-
-        width:250px;
-        height:100vh;
-
-        background:#111;
-        padding-top:70px;
-
-        transition:.3s;
-        z-index:999;
-    }
-
-    .sidebar.active{
-        left:0;
-    }
-
-    .sidebar a{
-        color:#fff;
-        text-decoration:none;
-        padding:15px 20px;
-    }
-}
     @media (max-width:768px) {
 
       .main-header {
@@ -606,43 +610,44 @@
         text-align: center;
         gap: 15px;
       }
-       .menu-btn{
-        display:block;
+
+      .menu-btn {
+        display: block;
+      }
+
+      .main-header ul,
+      .order {
+        display: none;
+      }
+
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        left: -260px;
+
+        width: 250px;
+        height: 100vh;
+
+        background: #111;
+        padding-top: 70px;
+
+        transition: .3s;
+        z-index: 999;
+      }
+
+      .sidebar.active {
+        left: 0;
+      }
+
+      .sidebar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 20px;
+      }
     }
-
-    .main-header ul,
-    .order{
-        display:none;
-    }
-
-    .sidebar{
-        display:flex;
-        flex-direction:column;
-
-        position:fixed;
-        top:0;
-        left:-260px;
-
-        width:250px;
-        height:100vh;
-
-        background:#111;
-        padding-top:70px;
-
-        transition:.3s;
-        z-index:999;
-    }
-
-    .sidebar.active{
-        left:0;
-    }
-
-    .sidebar a{
-        color:#fff;
-        text-decoration:none;
-        padding:15px 20px;
-    }
-}
 
     @media (max-width:480px) {
 
@@ -711,7 +716,7 @@
         <a href="login.html"><i class="bi bi-person-badge"></i></a>
       </div>
 
-       <div id="sidebar" class="sidebar">
+      <div id="sidebar" class="sidebar">
 
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
 
@@ -720,7 +725,7 @@
         <a href="#products" onclick="toggleMenu()">Products</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
 
-    </div>
+      </div>
 
 
     </div>
@@ -857,7 +862,7 @@
 
       async function loadProducts() {
         try {
-          const response = await fetch("http://localhost:3001/products");
+          const response = await fetch("http://localhost:3002/products");
           const products = await response.json();
 
           const container =

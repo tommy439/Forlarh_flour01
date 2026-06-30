@@ -249,7 +249,7 @@
 
             try {
                 const response = await fetch(
-                    `http://localhost:3001/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+                    `http://localhost:3002/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
                 );
 
                 if (!response.ok) {

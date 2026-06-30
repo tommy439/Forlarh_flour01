@@ -8,7 +8,7 @@ async function isAuthenticated() {
 async function userExists(email) {
     try {
         const response = await fetch(
-            `http://localhost:3001/users?email=${email}`
+            `http://localhost:3002/users?email=${email}`
         );
 
         const users = await response.json();
